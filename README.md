@@ -1,6 +1,6 @@
 # TreatMeals <img src="https://img.icons8.com/doodle/48/000000/hamburger.png"/> <img src="https://img.icons8.com/doodle/48/000000/french-fries.png"/>
 
-<img src="./public/imgs/TreatMeals.gif">
+<img src="/public/imgs/TreatMeals.gif">
 
 ### Eat your favorite foods from various fast food and restaurant locations while sticking to your macros!
 
