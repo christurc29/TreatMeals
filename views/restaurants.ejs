@@ -1,0 +1,55 @@
+<%- include('partials/logged-in-header') -%>
+
+<div class="container restaurant-cards">
+
+  <div class="dropdown">
+    <div class="dropdown-container" style="height: 2rem;">
+      <select id="rest-list" style="width: 10rem">
+        <option value=""></option>
+        <% for(var i = 0; i < cuisines.length; i++) { %>
+        <option value="<%=cuisines[i]%>"><%=cuisines[i]%></option>
+        <% } %>
+      </select>
+    </div>
+    <p class="clear-filter" id="clear-filter" style="text-align: center; margin-left: 1rem;">Clear Filter</p>
+  </div>
+  
+
+
+  <!-- <h1 id="h1-restaurants">Restaurants</h1> -->
+
+
+  <div class="row row-cols-1 row-cols-md-3 g-3">
+    <% for(var i = 0; i < restaurants.length; i++) { %>
+    <a href="/feed/<%= restaurants[i].title%>">
+      <div id="card" class="col-rest">
+        <div class="card h-100 w-75" style="border-radius: 3rem">
+          <img
+            src="<%= restaurants[i].image%>"
+            class="card-img-top"
+            alt="..."
+            id="restcard"
+            style="padding: 1rem"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= restaurants[i].title%></h5>
+            <p class="card-text"><%= restaurants[i].cuisine%></p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <%}%>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>   
+<script src="/js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+<script src="/vendors/jquery/jquery.min.js"></script>
+<script src="/vendors/popper.js/popper.min.js"></script>
+<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

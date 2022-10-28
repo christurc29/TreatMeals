@@ -1,0 +1,143 @@
+<%- include('partials/logged-in-header') -%>
+
+<div class="container feed-container">
+  <!-- <% if(posts.length > 0) { %>
+  <h1>Food Items for <%= posts[0].restaurant %></h1>
+  <% } %> -->
+
+  <!-- <select id="list" class="<%=restaurants[0].title%>">
+    <option value=""></option>
+    <option value="lthc">Low to High(calories)</option>
+    <option value="htlc">High to Low(calories)</option>
+  </select> -->
+
+  <p style="text-align: center; margin-bottom: 0.5rem;">Sort by calories:</p>
+  <div class="dropdown">
+    <div class="dropdown-container">
+      <select id="list" class="<%=restaurants[0].title%>">
+        <option value=""></option>
+        <option value="lthc">Low to High(calories)</option>
+        <option value="htlc">High to Low(calories)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% for(var i = 0; i < posts.length; i++) { %>
+    <div class="col">
+      <div class="card text-center h-100">
+        <img src="<%= posts[i].image%>" class="card-img-top" alt="..." />
+        <div class="card-body" data-id="<%=posts[i]._id%>">
+          <h5 class="card-title"><%= posts[i].title%></h5>
+          <p class="card-text">
+            <strong>Calories:</strong> <%= posts[i].calories%>g
+          </p>
+          <p class="card-text">
+            <strong>Protein:</strong><%= posts[i].protein%>g
+          </p>
+          <p class="card-text">
+            <strong>Carbs:</strong> <%= posts[i].totalcarbohydrates%>g
+          </p>
+          <p class="card-text">
+            <strong>Total Fat:</strong> <%= posts[i].totalfat%>g
+          </p>
+          <a href="/post/<%= posts[i].id%>" class="btn btn-primary"
+            >View Details</a
+          >
+          <button
+            class="btn btn-primary"
+            id="item-selection"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModalCenter"
+          >
+            Add to Meal
+          </button>
+          <button
+            class="btn btn-primary remove item-selection-remove btn-remove-meal"
+            id="<%=posts[i]._id%>"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModalCenter"
+          >
+            Remove from Meal
+          </button>
+
+          <%if(posts.user === user.id){%>
+          <form
+            action="/post/deletePost/<%= post.id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+          >
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          </form>
+          <%}%>
+        </div>
+
+        <div class="card-footer">
+          <span class="badge rounded-pill bg-pill"
+            ><%= posts[i].restaurant%></span
+          >
+          <span class="badge rounded-pill bg-secondary"
+            ><%= posts[i].dish%></span
+          >
+        </div>
+      </div>
+    </div>
+    <%}%>
+  </div>
+
+
+  
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Nutrition Facts</h5>
+        <button
+          type="button"
+          class="close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Calories:</strong> <span id="calories">0</span></p>
+        <p>
+          <strong>Protein:</strong> <span id="protein">0</span><span>g</span>
+        </p>
+        <p><strong>Carbs:</strong> <span id="carbs">0</span><span>g</span></p>
+        <p><strong>Fat:</strong> <span id="fat">0</span><span>g</span></p>
+        <p><strong>Meal Items:</strong> <span id="meal-items"></span></p>
+
+        <canvas id="myChart" class="chart-container"></canvas>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>   
+<script src="/js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+<script src="/vendors/jquery/jquery.min.js"></script>
+<script src="/vendors/popper.js/popper.min.js"></script>
+<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
