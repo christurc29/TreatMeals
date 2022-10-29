@@ -13638,4 +13638,16 @@ body {
   margin-top: 1rem;
 }
 
+@media screen and (max-width: 480px) {
+  .index-logo {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 481px) {
+  .index-logo {
+    width: 15vw;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
