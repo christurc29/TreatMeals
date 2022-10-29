@@ -1,6 +1,5 @@
 # TreatMeals <img src="https://img.icons8.com/doodle/48/000000/hamburger.png"/> <img src="https://img.icons8.com/doodle/48/000000/french-fries.png"/>
 
-<img src="/public/imgs/TreatMeals.gif">
 
 ### Eat your favorite foods from various fast food and restaurant locations while sticking to your macros!
 
@@ -31,21 +30,21 @@ First and foremost, I learned how to add authentication to a CRUD application. A
 <a target="_blank" href="https://github.com/christurc29/Recipe-Generator">Recipe Generator</a>
         <br />
       <a target="_blank" href="https://github.com/christurc29/Recipe-Generator">
-            <img src="./public/imgs/recipe-generator.gif" width="100%"  alt="Recipe Generator"/>
+            <img src="./public/images/recipe-generator.gif" width="100%"  alt="Recipe Generator"/>
         </a>
     </td>
     <td width="33.3%" valign="top">
 <a target="_blank" href="https://github.com/christurc29/Portfolio"> Portfolio</a>
       <br />
         <a target="_blank" href="https://github.com/christurc29/Portfolio">
-          <img src="./public/imgs/portfolio.gif" width="100%" alt="Portfolio"/>
+          <img src="./public/images/portfolio.gif" width="100%" alt="Portfolio"/>
         </a>
     </td>
     <td width="33.3%" valign="top">
 <a target="_blank" href="https://github.com/christurc29/FlickList">FlickList</a>
         <br />
         <a target="_blank" href="https://github.com/christurc29/FlickList">
-          <img src="./public/imgs/FlickList.gif" width="100%" alt="Interi"/>
+          <img src="./public/images/FlickList.gif" width="100%" alt="Interi"/>
         </a>
     </td>
   </tr>
