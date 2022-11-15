@@ -157,7 +157,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/my-meals");
+      res.redirect("/select-restaurant");
     } catch (err) {
       console.log(err);
     }
